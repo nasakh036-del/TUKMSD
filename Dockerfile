@@ -8,13 +8,10 @@ RUN wget https://github.com/masterking32/MasterDNSVPN/releases/latest/download/m
 
 WORKDIR /app
 
-COPY config.toml .
+COPY server_config.toml .
 COPY encrypt_key.txt .
-COPY start.sh .
-
-RUN chmod +x start.sh
 
 EXPOSE 53/udp
 EXPOSE 18000
 
-CMD ["./start.sh"]
+CMD ["/usr/local/bin/masterdnsvpn", "-c", "server_config.toml"]
