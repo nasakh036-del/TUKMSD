@@ -1,0 +1,43 @@
+# ==============================================================================
+# MasterDnsVPN Server Configuration - Railway Optimized
+# ==============================================================================
+
+# دامنه Vercel شما (کلاینت‌ها با این وصل می‌شوند)
+DOMAIN = ["tukvrs.vercel.app"]
+
+# روش رمزگذاری
+DATA_ENCRYPTION_METHOD = 5
+ENCRYPTION_KEY_FILE = "encrypt_key.txt"
+
+# پروتکل
+PROTOCOL_TYPE = "SOCKS5"
+
+# SOCKS5 Listener (خروجی)
+LISTEN_IP = "0.0.0.0"
+LISTEN_PORT = 18000
+SOCKS5_AUTH = false
+
+# UDP Listener (ورودی)
+UDP_HOST = "0.0.0.0"
+UDP_PORT = 53
+UDP_READERS = 4
+DNS_REQUEST_WORKERS = 8
+MAX_CONCURRENT_REQUESTS = 16384
+
+# DNS
+LOCAL_DNS_ENABLED = true
+LOCAL_DNS_IP = "0.0.0.0"
+LOCAL_DNS_PORT = 5353
+
+# Packet Settings
+PACKET_DUPLICATION_COUNT = 8
+SETUP_PACKET_DUPLICATION_COUNT = 8
+
+# ARQ Settings
+ARQ_WINDOW_SIZE = 6000
+ARQ_INITIAL_RTO_SECONDS = 0.09
+ARQ_MAX_RTO_SECONDS = 0.8
+ARQ_MAX_DATA_RETRIES = 600
+
+# Logging
+LOG_LEVEL = "INFO"
