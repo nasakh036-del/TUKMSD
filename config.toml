@@ -1,0 +1,26 @@
+# ==============================================================================
+# MasterDnsVPN Server Configuration for Railway
+# ==============================================================================
+
+DOMAIN = ["tukvrs.vercel.app"]
+
+PROTOCOL_TYPE = "SOCKS5"
+UDP_HOST = "0.0.0.0"
+UDP_PORT = 53
+
+# Security
+DATA_ENCRYPTION_METHOD = 5
+ENCRYPTION_KEY_FILE = "encrypt_key.txt"
+
+# SOCKS5 Listener (برای اتصال کلاینت‌ها)
+LISTEN_IP = "0.0.0.0"
+LISTEN_PORT = 18000
+
+# Upstream to Vercel
+FORWARD_IP = "tukvrs.vercel.app"
+FORWARD_PORT = 443
+
+# Logging
+LOG_LEVEL = "INFO"
+
+CONFIG_VERSION = "12"
